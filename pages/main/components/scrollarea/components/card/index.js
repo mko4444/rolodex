@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 0, height: 1 },
     shadowOpacity: .05,
     shadowRadius: 0,
+    marginTop: 1,
   },
   card_left: {
     height: '100%',
