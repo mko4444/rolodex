@@ -1,24 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
 import Main from './pages/main/index.js';
+import Profile from './pages/profile/index.js';
 
-export default class App extends React.Component {
-
-  render() {
-    return(
-      <SafeAreaView style={styles.view}>
-        <Main />
-      </SafeAreaView>
-    )
-  }
-}
-
-const styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    flexDirection: "column",
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
+const MainNavigator = createStackNavigator({
+  Main: {screen: Main},
+  Profile: {screen: Profile},
 });
+
+export default createAppContainer(MainNavigator);
