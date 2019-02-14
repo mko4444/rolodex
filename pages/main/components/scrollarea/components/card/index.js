@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import Tag from './components/tag.js';
 import Score from './components/score.js';
 
 const Tags = (props) => props.tags.map((tag, index) => <Tag tag={tag} key={index} /> )
 
 export default (props) =>
-  <View style={styles.card}>
+  <TouchableOpacity style={styles.card} onPress={() => props.nav.push('Profile')}>
     <View style={styles.card_left}>
       <Text style={styles.card_left_title}>{props.p.firstname + " " + props.p.lastname}</Text>
       <Text style={styles.card_left_bio}>{props.p.bio}</Text>
@@ -17,7 +17,7 @@ export default (props) =>
     <View style={styles.card_right}>
       <Score value={props.p.score} />
     </View>
-  </View>
+  </TouchableOpacity>
 
 const styles = StyleSheet.create({
   card: {

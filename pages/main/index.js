@@ -4,15 +4,19 @@ import Nav from './components/nav.js';
 import ScrollArea from './components/scrollarea/index.js';
 
 export default class extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   static navigationOptions = {
-    headerTitle: "Rolodex",
+    visible: false,
   };
 
   render() {
     return(
       <SafeAreaView style={styles.view}>
         <Nav />
-        <ScrollArea />
+        <ScrollArea nav={this.props.nav} />
       </SafeAreaView>
     )
   }
