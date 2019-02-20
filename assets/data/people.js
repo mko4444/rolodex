@@ -4,7 +4,7 @@ export default [
     "firstname": "Matthew",
     "lastname": "Kochakian",
     "bio": "This is me, so no description is needed.",
-    "tags": ["coding", "design", "founder"],
+    "tags": ["coding", "design", "founder", "marketing", "recruiter"],
     "score": 99,
   }, {
     "firstname": "Shaun",
