@@ -22,12 +22,12 @@ const MainNavigator = createStackNavigator({
   Profile: {
     screen: Profile,
     navigationOptions: {
-      header: <ProfileNav />,
+      header: props => <ProfileNav {...props} />,
     }
   },
 },
 {
-  headerMode: "float",
+  headerMode: 'screen',
   cardShadowEnabled: false,
   cardOverlayEnabled: true,
   cardStyle: {

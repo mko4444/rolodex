@@ -16,7 +16,7 @@ export default class App extends React.Component {
     }
   }
   async _loadAssetsAsync() {
-    const imageAssets = cacheImages([require('./assets/shared/Rolodex.png')]);
+    const imageAssets = cacheImages([require('./assets/shared/Rolodex.png'),require('./assets/shared/back.png'),require('./assets/shared/plus.png')]);
     await Promise.all([...imageAssets]);
   }
   render() {
