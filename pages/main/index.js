@@ -15,7 +15,6 @@ export default class extends React.Component {
   render() {
     return(
       <SafeAreaView style={styles.view}>
-        <Nav />
         <ScrollArea nav={this.props.nav} />
       </SafeAreaView>
     )

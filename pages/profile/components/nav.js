@@ -7,14 +7,18 @@ export default () =>
     <View>
       <Image style={styles.dex} source={require('../../../assets/shared/Rolodex.png')} />
     </View>
-    <View style={styles.nav_bounds}>
-      <Image source={require('../../../assets/shared/plus.png')} />
-    </View>
+    <View style={styles.nav_bounds} />
   </SafeAreaView>
 
 const styles = StyleSheet.create({
+  view: {
+    flex: 1,
+    flexDirection: "column",
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
   nav: {
-
     width: "100%",
     height: 120,
     flexDirection: "row",
@@ -32,7 +36,5 @@ const styles = StyleSheet.create({
   nav_bounds: {
     height: 24,
     width: 24,
-    marginLeft: 20,
-    marginRight: 20,
   },
 });
