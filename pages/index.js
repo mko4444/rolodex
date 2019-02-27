@@ -16,7 +16,7 @@ const MainNavigator = createStackNavigator({
   Main: {
     screen: MainScreen,
     navigationOptions: {
-      header: <MainNav />,
+      headerVisible: false,
     }
   },
   Profile: {
@@ -27,15 +27,9 @@ const MainNavigator = createStackNavigator({
   },
 },
 {
-  headerMode: 'screen',
   cardShadowEnabled: false,
   cardOverlayEnabled: true,
-  cardStyle: {
-
-  },
-  navigationOptions: {
-    headerVisible: false,
-  }
+  headerMode: "none",
 });
 
 const FirstTimeNavigator = createStackNavigator({

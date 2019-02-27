@@ -1,16 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, View, Image } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, View, Image, TouchableOpacity } from 'react-native';
 
-export default () =>
-  <SafeAreaView style={styles.nav}>
-    <View style={styles.nav_bounds} />
-    <View>
-      <Image style={styles.dex} source={require('../../../assets/shared/Rolodex.png')} />
-    </View>
-    <View style={styles.nav_bounds}>
-      <Image source={require('../../../assets/shared/plus.png')} />
-    </View>
-  </SafeAreaView>
+export default class extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return(
+      <SafeAreaView style={styles.nav}>
+        <View style={styles.nav_bounds} />
+        <View>
+          <Image style={styles.dex} source={require('../../../assets/shared/Rolodex.png')} />
+        </View>
+        <View style={styles.nav_bounds}>
+          <TouchableOpacity onPress={this.props.onPress}><Image source={require('../../../assets/shared/plus.png')} /></TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    )
+  }
+}
 
 const styles = StyleSheet.create({
   nav: {
