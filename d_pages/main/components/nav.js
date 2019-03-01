@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, View, Image, TouchableOpacity } from 'react-native';
 
 export default class extends React.Component {
   constructor(props) {

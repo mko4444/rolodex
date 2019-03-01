@@ -8,7 +8,7 @@ const cacheImages = (images) => images.map(image => {
   else { return Asset.fromModule(image).downloadAsync(); }
 });
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -16,7 +16,7 @@ export default class App extends React.Component {
     }
   }
   async _loadAssetsAsync() {
-    const imageAssets = cacheImages([require('./assets/shared/Rolodex.png'),require('./assets/shared/back.png'),require('./assets/shared/plus.png')]);
+    const imageAssets = cacheImages([require('./assets/shared/Rolodex.png'),require('./assets/shared/back.png'),require('./assets/shared/plus.png'),require('./assets/shared/new-note.png')]);
     await Promise.all([...imageAssets]);
   }
   render() {
@@ -29,3 +29,4 @@ export default class App extends React.Component {
     />
   }
 }
+export default App;

@@ -8,7 +8,7 @@ const hasImage = true;
 export default (props) =>
   <SafeAreaView style={[styles.view, {shadowColor: "#0D1B2C", shadowOffset: {width: 0, height: 2 }, shadowOpacity: .07, shadowRadius: 50}]}>
     <View style={styles.nav}>
-      <TouchableOpacity onPress={() => props.navigation.popToTop()} style={styles.nav_bounds}><Image source={require('../../../assets/shared/back.png')} /></TouchableOpacity>
+      <TouchableOpacity onPress={() => props.navigation.navigate('Main')} style={styles.nav_bounds}><Image source={require('../../../assets/shared/back.png')} /></TouchableOpacity>
       {
         hasImage
           ? <View style={{overflow: "hidden", marginTop: 25, zIndex: 3, height: width/4, width: width/4, borderWidth: 2, borderColor: "rgba(67,146,241,1)", borderRadius: 50, backgroundColor: 'rgba(67,146,241,.25)'}}>
@@ -19,7 +19,7 @@ export default (props) =>
               <Text style={{marginTop: 5, marginBottom: 25, marginTop: 16, fontSize: 16, fontWeight: "600", color: "rgba(13,27,44,.25)"}}>This is me, so no description needed.</Text>
             </View>
       }
-      <TouchableOpacity onPress={props.onRightPress} style={styles.nav_bounds}><Image source={require('../../../assets/shared/new-note.png')} /></TouchableOpacity>
+      <TouchableOpacity onPress={() => props.navigation.navigate('NewNote')} style={styles.nav_bounds}><Image source={require('../../../assets/shared/new-note.png')} /></TouchableOpacity>
     </View>
     {
       !hasImage

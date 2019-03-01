@@ -22,7 +22,7 @@ export default class extends React.Component {
           <TouchableOpacity
             activeOpacity={.5}
             style={styles.button}
-            onPress={() => this.props.nav.push('OnBoarding')}
+            onPress={() => this.props.navigation.push('OnBoarding')}
           >
             <Text style={styles.buttontext}>Let's begin</Text>
           </TouchableOpacity>

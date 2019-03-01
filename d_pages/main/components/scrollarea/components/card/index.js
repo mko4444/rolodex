@@ -8,7 +8,7 @@ var height = Dimensions.get('window').height; //full height
 const Tags = (props) => props.tags.map((tag, index) => <Tag tag={tag} key={index} /> )
 
 export default (props) =>
-  <TouchableOpacity style={styles.card} onPress={() => props.navigation.push('IndividualPerson')}>
+  <TouchableOpacity style={styles.card} onPress={() => props.navigation.push('Profile')}>
     <View style={styles.card__inner}>
       <View style={styles.left}>
         <Text style={styles.card_left_title}>{props.p.firstname + " " + props.p.lastname}</Text>
