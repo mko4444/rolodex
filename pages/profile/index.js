@@ -12,7 +12,7 @@ export default class extends React.Component {
   render() {
     return(
       <SafeAreaView style={{height: height, width: width, backgroundColor: "#FCFDFE"}}>
-        <Top />
+        <Nav />
         <List />
       </SafeAreaView>
     )

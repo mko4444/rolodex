@@ -6,10 +6,15 @@ import OnBoarding from './onboarding/index.js';
 import Splash from './splash/index.js';
 import ProfileNav from './profile/components/nav.js';
 import MainNav from './main/components/nav.js';
+import NewNote from './new-note/index.js';
+import NewPerson from './new-person/index.js';
 
 const MainScreen = ({ navigation }) => (<Main nav={navigation}/>);
 const SplashScreen = ({ navigation }) => (<Splash nav={navigation}/>);
 const OnBoardingScreen = ({ navigation }) => (<OnBoarding nav={navigation}/>);
+const NewNoteScreen = ({ navigation }) => (<NewNote nav={navigation}/>);
+const NewPersonScreen = ({ navigation }) => (<NewPerson nav={navigation}/>);
+
 const firstTime = false // simulate a first time user
 
 const MainNavigator = createStackNavigator({
@@ -25,6 +30,18 @@ const MainNavigator = createStackNavigator({
       header: props => <ProfileNav {...props} />,
     }
   },
+  NewNote: {
+    screen: NewNote,
+    navigationOptions: {
+      headerVisible: false,
+    }
+  },
+  NewPerson: {
+    screen: NewPerson,
+    navigationOptions: {
+      headerVisible: false,
+    }
+  }
 },
 {
   cardShadowEnabled: false,

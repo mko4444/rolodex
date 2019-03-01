@@ -7,7 +7,7 @@ export default (props) =>
   <SafeAreaView style={[styles.view, {shadowColor: "#0D1B2C", shadowOffset: {width: 0, height: 2 }, shadowOpacity: .07, shadowRadius: 50}]}>
     <View style={styles.nav}>
       <TouchableOpacity onPress={() => props.navigation.navigate('Main')} style={styles.nav_bounds}><Image source={require('../../../assets/shared/back.png')} /></TouchableOpacity>
-      <View style={{overflow: "hidden", marginTop: 20, zIndex: 3, height: width/4, width: width/4, borderWidth: 2, borderColor: "rgba(67,146,241,1)", borderRadius: 50, backgroundColor: 'rgba(67,146,241,.25)'}}>
+      <View style={{overflow: "hidden", marginTop: 25, zIndex: 3, height: width/4, width: width/4, borderWidth: 2, borderColor: "rgba(67,146,241,1)", borderRadius: 50, backgroundColor: 'rgba(67,146,241,.25)'}}>
         <Image source={require("../../../assets/shared/matthew.png")} style={{resizeMode: "cover", height: width/4, width: width/4}} />
       </View>
       <View style={styles.nav_bounds} />
@@ -28,11 +28,13 @@ const styles = StyleSheet.create({
 
   },
   nav: {
+    marginTop: -100,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start",
     backgroundColor: "white",
+    paddingTop: 100,
     paddingLeft: 20,
     paddingRight: 20,
   },

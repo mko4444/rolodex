@@ -22,9 +22,8 @@ export default class extends React.Component {
 
 const styles = StyleSheet.create({
   nav: {
-
     width: "100%",
-    height: 120,
+    height: 100,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -35,7 +34,7 @@ const styles = StyleSheet.create({
   nav_bar_title: {
     fontSize: 24,
     fontWeight: "700",
-    color: "#0B2027",
+    color: "#0D1B2C",
   },
   nav_bounds: {
     height: 24,
