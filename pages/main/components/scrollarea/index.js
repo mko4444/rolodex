@@ -1,16 +1,36 @@
 import React from 'react';
-import { StyleSheet, ScrollView, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, Dimensions } from 'react-native';
 import Card from './components/card/index.js';
+import db from '../../../../assets/config';
+var width = Dimensions.get('window').width; //full width
+var height = Dimensions.get('window').height; //full height
 
-import people from '../../../../assets/data/people.js';
-
-const List = (props) => people.map((person, index) => <Card key={index} p={person} /> )
-
-export default (props) => <ScrollView style={styles.root}><List /></ScrollView>
+export default class extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      listOfPeople: []
+    }
+  }
+  render() {
+    db.collection('contacts').get().then((contacts) =>
+      this.setState({listOfPeople: contacts.docs.map(doc => doc.data())})
+    )
+    return(
+      <ScrollView style={styles.root}>
+        {
+          this.state.listOfPeople.map((x, index) => <Card key={index} navigation={this.props.navigation} p={x} />)
+        }
+      </ScrollView>
+    )
+  }
+}
 
 const styles = StyleSheet.create({
   root: {
-    height: "100%",
-    width: "100%",
+    width: width,
+    flex: 1,
   },
 })
+
+// <Card navigation={props.navigation} p={c} />

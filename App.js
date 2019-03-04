@@ -1,24 +1,32 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
-import Main from './pages/main/index.js';
+import { AppLoading, Asset } from 'expo';
+import { View } from 'react-native';
+import Index from './pages/index.js';
 
-export default class App extends React.Component {
+const cacheImages = (images) => images.map(image => {
+  if (typeof image === 'string') { return Image.prefetch(image); }
+  else { return Asset.fromModule(image).downloadAsync(); }
+});
 
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isReady: false
+    }
+  }
+  async _loadAssetsAsync() {
+    const imageAssets = cacheImages([require('./assets/shared/Rolodex.png'),require('./assets/shared/back.png'),require('./assets/shared/plus.png'),require('./assets/shared/new-note.png')]);
+    await Promise.all([...imageAssets]);
+  }
   render() {
-    return(
-      <SafeAreaView style={styles.view}>
-        <Main />
-      </SafeAreaView>
-    )
+    return this.state.isReady ?
+    <Index /> :
+    <AppLoading
+      startAsync={this._loadAssetsAsync}
+      onFinish={() => this.setState({ isReady: true })}
+      onError={console.warn}
+    />
   }
 }
-
-const styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    flexDirection: "column",
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-});
+export default App;
