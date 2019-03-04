@@ -5,14 +5,14 @@ import Score from './components/score.js';
 var width = Dimensions.get('window').width; //full width
 var height = Dimensions.get('window').height; //full height
 
-const Tags = (props) => props.tags.map((tag, index) => <Tag tag={tag} key={index} /> )
+const Tags = (props) =>  props.tags ? props.tags.map((tag, index) => <Tag tag={tag} key={index} /> ) : null
 
 export default (props) =>
-  <TouchableOpacity style={styles.card} onPress={() => props.navigation.push('IndividualPerson')}>
+  <TouchableOpacity style={styles.card} onPress={(p) => props.navigation.push('IndividualPerson', {id: props.p.id})}>
     <View style={styles.card__inner}>
       <View style={styles.left}>
-        <Text style={styles.card_left_title}>{props.p.firstname + " " + props.p.lastname}</Text>
-        <Text style={styles.card_left_bio}>{props.p.bio}</Text>
+        <Text style={styles.card_left_title}>{props.p.first_name + " " + props.p.last_name}</Text>
+        <Text style={styles.card_left_bio}>{props.p.description}</Text>
         <View style={styles.card_cont}>
           <Tags tags={props.p.tags} />
         </View>

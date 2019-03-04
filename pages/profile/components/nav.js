@@ -15,8 +15,8 @@ export default (props) =>
               <Image source={require("../../../assets/shared/matthew.png")} style={{resizeMode: "cover", height: width/4, width: width/4}} />
             </View>
           : <View style={[styles.view, {marginTop: 12}]}>
-              <Text style={{marginTop: 15, fontSize: 24, fontWeight: "600", color: "#0D1B2C"}}>Matthew Kochakian</Text>
-              <Text style={{marginTop: 5, marginBottom: 25, marginTop: 16, fontSize: 16, fontWeight: "600", color: "rgba(13,27,44,.25)"}}>This is me, so no description needed.</Text>
+              <Text style={{marginTop: 15, fontSize: 24, fontWeight: "600", color: "#0D1B2C"}}>{props.p.first_name + " " + props.p.last_name}</Text>
+              <Text style={{marginTop: 5, marginBottom: 25, marginTop: 16, fontSize: 16, fontWeight: "600", color: "rgba(13,27,44,.25)"}}>{props.p.description}</Text>
             </View>
       }
       <TouchableOpacity onPress={props.onRightPress} style={styles.nav_bounds}><Image source={require('../../../assets/shared/new-note.png')} /></TouchableOpacity>
@@ -25,8 +25,8 @@ export default (props) =>
       !hasImage
         ? null
         : <View style={styles.view}>
-            <Text style={{marginTop: 15, fontSize: 24, fontWeight: "600", color: "#0D1B2C"}}>Matthew Kochakian</Text>
-            <Text style={{marginTop: 5, marginBottom: 25, marginTop: 5, fontSize: 16, fontWeight: "600", color: "rgba(13,27,44,.25)"}}>This is me, so no description needed.</Text>
+            <Text style={{marginTop: 15, fontSize: 24, fontWeight: "600", color: "#0D1B2C"}}>{props.p.first_name + " " + props.p.last_name}</Text>
+            <Text style={{marginTop: 5, marginBottom: 25, marginTop: 5, fontSize: 16, fontWeight: "600", color: "rgba(13,27,44,.25)"}}>{props.p.description}</Text>
           </View>
     }
   </SafeAreaView>

@@ -7,8 +7,8 @@ export default class extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      text: "",
-      note: ""
+      title: "",
+      note: "",
     }
   }
   onCancel() {
@@ -20,6 +20,9 @@ export default class extends React.Component {
     this.refs['title_input'].blur()
     this.refs['note_input'].blur()
     this.props.onClose()
+    const card = { "title": this.state.title, "text": this.state.note, "date": "" }
+    this.props.onCreateList(card)
+    this.setState({title: "", note: "", })
   }
   render() {
     return(
@@ -45,7 +48,8 @@ export default class extends React.Component {
           style={styles.titleInput}
           ref="title_input"
           placeholder="Enter a title..."
-          onChangeText={(text) => this.setState({text})}
+          value={this.state.title}
+          onChangeText={(title) => this.setState({title})}
           multiline={false}
           placeholderTextColor="rgba(67,146,241,.25)"
         />
@@ -61,6 +65,7 @@ export default class extends React.Component {
           style={styles.noteInput}
           ref="note_input"
           placeholder="Enter a note..."
+          value={this.state.note}
           onChangeText={(note) => this.setState({note})}
           multiline={true}
           placeholderTextColor="rgba(12,27,44,.15)"

@@ -3,19 +3,21 @@ import { StyleSheet, View, ScrollView } from 'react-native';
 import Card from './components/card.js';
 var moment = require('moment');
 
-export default () =>
-  <ScrollView>
-    <Card title="hello adsfhiasjdfo asidfjo adsj ifjadsofj joisafd " date={moment().format("MMMM Do, YYYY").toString()} text="bla bla bla aifga asoidf jasdif jiajfoiajfg iwre ngorwngiornfoasj idjfoia sjnigf gawriofg isjfg ioasjgiajfig" />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card last={true} />
-    <View style={{height: 20}} />
-  </ScrollView>
+export default (props) => {
+  console.log(props.p)
+  let list = props.p.map((card, index) =>
+    <Card
+      title={card.title}
+      date={moment(card.date).format("MMMM Do, YYYY").toString()}
+      text={card.text}
+      key={index}
+      last={index === props.p.length-1}
+    />
+  );
+  return(
+    <ScrollView>
+      {list}
+      <View style={{height: 20}} />
+    </ScrollView>
+  )
+}
