@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   view: {
     flex: 1,
     flexDirection: "column",
-    backgroundColor: '#fff',
+    backgroundColor: '#rgba(13,27,44,.02)',
     alignItems: 'center',
     justifyContent: 'flex-start',
   }

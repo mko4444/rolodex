@@ -16,7 +16,18 @@ class App extends React.Component {
     }
   }
   async _loadAssetsAsync() {
-    const imageAssets = cacheImages([require('./assets/shared/Rolodex.png'),require('./assets/shared/back.png'),require('./assets/shared/plus.png'),require('./assets/shared/new-note.png')]);
+    const imageAssets = cacheImages([
+      require('./assets/shared/Rolodex.png'),
+      require('./assets/shared/back.png'),
+      require('./assets/shared/plus.png'),
+      require('./assets/shared/new-note.png'),
+      require("./assets/shared/tab_one.png"),
+      require("./assets/shared/tab_one_gray.png"),
+      require("./assets/shared/tab_two.png"),
+      require("./assets/shared/tab_two_gray.png"),
+      require("./assets/shared/tab_three.png"),
+      require("./assets/shared/tab_three_gray.png")
+    ]);
     await Promise.all([...imageAssets]);
   }
   render() {

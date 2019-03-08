@@ -16,7 +16,6 @@ function getStringForValue(a) {
 export default (props) =>
   <View style={styles.root}>
     <View style={styles.score_cont}>
-      <Image source={require('../../../../../../../assets/shared/flame.png')} />
       <Text style={styles.score_value}>{props.value}</Text>
     </View>
     <Text style={styles.score_string}>{getStringForValue(props.value)}</Text>
@@ -32,7 +31,7 @@ const styles = StyleSheet.create({
   },
   score_value: {
     color: "#4392F1",
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: "600",
     marginLeft: 5,
   },
