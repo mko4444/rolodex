@@ -18,21 +18,24 @@ export default (props) =>
         </View>
       </View>
       <View style={styles.right}>
-        <Score value={props.p.score} />
+        <Text style={styles.score_string}>Close friend</Text>
       </View>
     </View>
   </TouchableOpacity>
 
 const styles = StyleSheet.create({
   card: {
-    marginLeft: 20,
-    marginRight: 20,
+    marginLeft: 10,
+    marginRight: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
+    marginBottom: 10,
     flex: 1,
+    borderRadius: 5,
     shadowColor: "#0B2027",
-    shadowOffset: {width: 0, height: 1 },
+    shadowOffset: {width: 0, height: 2 },
     shadowOpacity: .05,
     shadowRadius: 0,
-    marginBottom: 1,
     backgroundColor: "white",
   },
   card__inner: {
@@ -44,7 +47,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   left: {
-    height: 100,
+    height: 80,
     zIndex: 1,
     overflow: "hidden",
     flexDirection: "column",
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
   right: {
     position: "absolute",
     right: 0,
-    height: 100,
+    height: 80,
     zIndex: 10,
     paddingLeft: 10,
     backgroundColor: "white",
@@ -79,5 +82,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     overflow: "hidden",
+  },
+  score_string: {
+    fontSize: 16,
+    color: "rgb(67,146,241)",
+    fontWeight: "600",
+    textTransform: "capitalize",
   }
 });

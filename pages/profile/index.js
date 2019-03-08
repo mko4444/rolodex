@@ -4,7 +4,6 @@ import List from './components/list/index.js';
 import Nav from './components/nav.js';
 import NewNote from './components/new-note/index.js';
 import { StyleSheet, View, SafeAreaView, Dimensions, Animated, Easing } from 'react-native';
-import db from '../../assets/config';
 var width = Dimensions.get('window').width,
     height = Dimensions.get('window').height,
     negativeHeight = 0 - Dimensions.get('window').height
