@@ -8,7 +8,7 @@ var height = Dimensions.get('window').height; //full height
 const Tags = (props) =>  props.tags ? props.tags.map((tag, index) => <Tag tag={tag} key={index} /> ) : null
 
 export default (props) =>
-  <TouchableOpacity style={styles.card} onPress={(p) => props.navigation.push('IndividualPerson', {id: props.p.id})}>
+  <TouchableOpacity activeOpacity={.6} style={styles.card} onPress={(p) => props.navigation.push('IndividualPerson', {id: props.p.id})}>
     <View style={styles.card__inner}>
       <View style={styles.left}>
         <Text style={styles.card_left_title}>{props.p.first_name + " " + props.p.last_name}</Text>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 5,
     shadowColor: "#0B2027",
-    shadowOffset: {width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 3 },
     shadowOpacity: .05,
     shadowRadius: 0,
     backgroundColor: "white",
