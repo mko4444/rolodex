@@ -13,6 +13,10 @@ export default class extends React.Component {
           "first_name": "Matthew",
           "last_name": "Kochakian",
           "description": "test"
+        }, {
+          "first_name": "Matthew",
+          "last_name": "Kochakian",
+          "description": "test"
         }
       ]
     }

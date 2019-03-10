@@ -25,17 +25,17 @@ export default (props) =>
 
 const styles = StyleSheet.create({
   card: {
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: 16,
+    marginRight: 16,
     paddingLeft: 15,
     paddingRight: 15,
-    marginBottom: 10,
+    marginBottom: 16,
     flex: 1,
     borderRadius: 5,
-    shadowColor: "#0B2027",
-    shadowOffset: {width: 0, height: 3 },
+    shadowColor: "#0D1B2C",
+    shadowOffset: {width: 0, height: 4 },
     shadowOpacity: .05,
-    shadowRadius: 0,
+    shadowRadius: 1,
     backgroundColor: "white",
   },
   card__inner: {
